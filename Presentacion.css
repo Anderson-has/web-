@@ -1,40 +1,97 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-/* este viene siendo el contenedor principal donde yo tengo todos los items */
-contenedor{
+body{
+    width: 100vw;
+    
+    height: 200vh;
+    border:solid black;
+    background: #466995;
     display: grid;
-    grid-template-columns: 1fr 2fr; /* aqui puedo ejustar las proporciones segun sea necesario   */
-    gap: 20px; /* este codigo seria para el espacio entre columnas  */
-    padding: 20px;
-    max-width: 1200px; /* aqui ajustamos el tamaño maximo si es necesario */
-    margin: auto;
+    grid-template-areas: /*2 filas x 2 columnas*/
+    "contenedor contenedor1"
+    "contenedor contenedor2";
+}
 
+.border{
+    /*border:solid black;*/
+}
+
+#contenedor{
+    grid-area: contenedor; /*identidica el elemento para la grilla*/
+    width: 40vw;
+    height: 140vh;
+    text-align: center;
+    display: grid;
+    grid-template-areas: /*como va quedar la matriz 1 fila x 4 columnas*/
+    "imagen"
+    "nombres"
+    "informacionpersonal"
+    "perfil";
+}
+/*id=# class=.*/
+
+#imagen{
     
-}
-imagen{
-    grid-column: 1/2; /* distribucion de la imagen */
-    background: #4464 ; /* color de fondo */
-    
-}
-Nombres{
-    grid-column: 2/3;
+    align-content: center;
+    grid-area: imagen;
+    width: 40vw;
+    height: 50vh;
+    border:solid black;
 }
 
-informacion personal{
-    grid-column: 1/3;
-}
-perfil{
-    grid-column: 1/3;
+#imagen img{
+    width: 20vw;
+    height: 40vh;
+    border-radius: 50%;
 }
 
-h1, h2, h3{
-    margin: 0;
-    padding: 0;
+#nombres{
+    grid-area: nombres;
+    color: black;
+    border:solid black;
+    width: 40vw;/*ancho del componente*/
+    height: 15vh;/*largo del componente*/
+    font-size: 20px;
 }
-informacion personal h3, perfil h3{
-    margin-top: 10xp;
+#informacionpersonal{
+    grid-area: informacionpersonal;
+    align-content: center;
+    border:solid black;
+    width: 40vw;
+    height: 50vh;
+    color: black;
+   /* background-color: pink;*/
+    font-size: 20px;
+}
+#perfil{
+    grid-area: perfil;
+   
+    width: 40vw;
+    height: 60vh;
+    align-content: center;
+    color: black;
+    font-size: 25px;
+}
+
+#contenedor1{
+    grid-area: contenedor1;
+    width: 60vw;
+    height: 95vh;
+    text-align: center;
+   /* background-color: aquamarine;*/
+    border:solid black;
+    font-size: 25px;
+    align-content: center;
+}
+#contenedor2{
+    grid-area: contenedor2;
+    width: 60vw;
+    height: 110vh;
+    text-align: center;
+    border:solid black;
+    font-size: 25px;
+    align-content: center;
 }
