@@ -1,97 +1,90 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-    width: 100vw;
-    
-    height: 200vh;
-    border:solid black;
-    background: #466995;
-    display: grid;
-    grid-template-areas: /*2 filas x 2 columnas*/
-    "contenedor contenedor1"
-    "contenedor contenedor2";
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-.border{
-    /*border:solid black;*/
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-#contenedor{
-    grid-area: contenedor; /*identidica el elemento para la grilla*/
-    width: 40vw;
-    height: 140vh;
-    text-align: center;
-    display: grid;
-    grid-template-areas: /*como va quedar la matriz 1 fila x 4 columnas*/
-    "imagen"
-    "nombres"
-    "informacionpersonal"
-    "perfil";
+/* Sección izquierda: Perfil e información */
+.left {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px;
+    flex: 1 1 300px;
 }
-/*id=# class=.*/
 
-#imagen{
-    
+.profile-img img {
+    width: 50%;
     align-content: center;
-    grid-area: imagen;
-    width: 40vw;
-    height: 50vh;
-    border:solid black;
-}
-
-#imagen img{
-    width: 20vw;
-    height: 40vh;
     border-radius: 50%;
+    margin-bottom: 20px;
 }
 
-#nombres{
-    grid-area: nombres;
-    color: black;
-    border:solid black;
-    width: 40vw;/*ancho del componente*/
-    height: 15vh;/*largo del componente*/
-    font-size: 20px;
-}
-#informacionpersonal{
-    grid-area: informacionpersonal;
-    align-content: center;
-    border:solid black;
-    width: 40vw;
-    height: 50vh;
-    color: black;
-   /* background-color: pink;*/
-    font-size: 20px;
-}
-#perfil{
-    grid-area: perfil;
-   
-    width: 40vw;
-    height: 60vh;
-    align-content: center;
-    color: black;
-    font-size: 25px;
+.contact-info, .perfil {
+    margin-bottom: 30px;
 }
 
-#contenedor1{
-    grid-area: contenedor1;
-    width: 60vw;
-    height: 95vh;
-    text-align: center;
-   /* background-color: aquamarine;*/
-    border:solid black;
-    font-size: 25px;
-    align-content: center;
+.contact-info h2, .contact-info p {
+    margin-bottom: 10px;
 }
-#contenedor2{
-    grid-area: contenedor2;
-    width: 60vw;
-    height: 110vh;
-    text-align: center;
-    border:solid black;
-    font-size: 25px;
-    align-content: center;
+
+.perfil p {
+    font-size: 14px;
+}
+
+/* Sección derecha: Experiencia y formación */
+.right {
+    padding: 30px;
+    flex: 2;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.job, .formacion p {
+    margin-bottom: 20px;
+}
+
+/* Responsivo para pantallas móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        flex: 1 1 100%;
+    }
+
+    .profile-img img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    .left {
+        text-align: center;
+    }
 }
